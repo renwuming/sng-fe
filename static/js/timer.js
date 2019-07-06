@@ -75,6 +75,10 @@ function handleTimer() {
     // 请求数据
     initData()
   }
+  // 30s时，同步一下时间
+  if (seconds % 60 === 30) {
+    initData()
+  }
   var hour = Math.floor(seconds / 60 / 60)
   var minutes = Math.floor(seconds / 60)
   var second = seconds % 60
