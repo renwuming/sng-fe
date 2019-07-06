@@ -1,0 +1,139 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+  <meta charset="utf-8">
+  <meta http-equiv="X-UA-Compatible" content="IE=edge">
+  <title>德州扑克计时器</title>
+  <meta name="viewport" content="initial-scale=1, maximum-scale=1">
+  <link rel="shortcut icon" href="./static/favicon.ico">
+  <meta name="apple-mobile-web-app-capable" content="yes">
+  <meta name="apple-mobile-web-app-status-bar-style" content="black">
+
+  <link rel="stylesheet" href="//g.alicdn.com/msui/sm/0.6.2/css/sm.min.css">
+  <link rel="stylesheet" href="//g.alicdn.com/msui/sm/0.6.2/css/sm-extend.min.css">
+  <link rel="stylesheet" href="./static/css/setting.css">
+
+</head>
+
+<body class="main-bk">
+  <div class="page-group">
+    <div class="page page-current">
+      <div class="content long-list">
+        <div class="list-block">
+          <ul>
+            <li>
+              <div class="item-content">
+                <div class="item-media"><i class="icon icon-form-name"></i></div>
+                <div class="item-inner">
+                  <div class="item-title label">比赛名称</div>
+                  <div class="item-input">
+                    <input id="name" type="email" placeholder="输入名称">
+                  </div>
+                </div>
+              </div>
+            </li>
+            <li>
+              <div class="item-content">
+                <div class="item-media"><i class="icon icon-form-name"></i></div>
+                <div class="item-inner">
+                  <div class="item-title label">升盲时间</div>
+                  <div class="item-input">
+                    <input id="timePicker" type="text" placeholder="选择时间">
+                  </div>
+                  <div class="item-after">分钟</div>
+                </div>
+              </div>
+            </li>
+          </ul>
+        </div>
+        <div class="list-block">
+          <ul>
+            <li>
+              <div class="item-content">
+                <div class="item-media"><i class="icon icon-form-name"></i></div>
+                <div class="item-inner">
+                  <div class="item-title label">盲注级别</div>
+                  <div class="item-after">
+                    <div id="addLevel">
+                      <svg t="1562229754815" class="icon" viewBox="0 0 1024 1024" version="1.1"
+                        xmlns="http://www.w3.org/2000/svg" p-id="4024" width="30" height="30">
+                        <path
+                          d="M512 64.021106c-247.405763 0-447.978894 200.572108-447.978894 447.978894s200.572108 447.978894 447.978894 447.978894S959.977871 759.405763 959.977871 512 759.405763 64.021106 512 64.021106z m223.989447 479.977679H543.998785v191.990662c0 17.672498-14.326287 31.998785-31.998785 31.998785s-31.998785-14.326287-31.998785-31.998785V543.998785H288.010553c-17.672498 0-31.998785-14.326287-31.998785-31.998785s14.326287-31.998785 31.998785-31.998785h191.990662V288.010553c0-17.672498 14.326287-31.998785 31.998785-31.998785s31.998785 14.326287 31.998785 31.998785v191.990662h191.990662c17.672498 0 31.998785 14.326287 31.998785 31.998785-0.001023 17.671475-14.32731 31.998785-31.998785 31.998785z"
+                          p-id="4025" fill="#1afa29"></path>
+                      </svg>
+                    </div>
+                  </div>
+                </div>
+              </div>
+            </li>
+            <li>
+              <div class="item-content">
+                <div class="item-media"><i class="icon icon-form-name"></i></div>
+                <div class="item-inner">
+                  <div class="item-title label">小盲</div>
+                  <div class="item-input">
+                    <input id="smallBlind" type="number" placeholder="输入小盲">
+                  </div>
+                </div>
+              </div>
+            </li>
+            <li>
+              <div class="item-content">
+                <div class="item-media"><i class="icon icon-form-name"></i></div>
+                <div class="item-inner">
+                  <div class="item-title label">ante</div>
+                  <div class="item-input">
+                    <input id="ante" type="number" placeholder="输入ante">
+                  </div>
+                </div>
+              </div>
+            </li>
+          </ul>
+        </div>
+        <div class="list-block">
+          <ul id="blindList" class="show-list table-list">
+            <li>
+              <div class="item-content">
+                <div class="item-media"><i class="icon icon-form-name"></i></div>
+                <div class="item-inner">
+                  <div class="item-title">级别</div>
+                  <div class="item-after">小盲</div>
+                  <div class="item-after">大盲</div>
+                  <div class="item-after">ante</div>
+                  <div class="item-after" style="visibility:hidden;">操作</div>
+                </div>
+              </div>
+            </li>
+          </ul>
+        </div>
+        <div class="list-block">
+          <ul class="show-list">
+            <li>
+              <div class="item-content">
+                <div class="item-media"><i class="icon icon-form-name"></i></div>
+                <div class="item-inner">
+                  <div class="item-title">比赛总时长</div>
+                  <div id="sumTime" class="item-after">0</div>
+                  <div class="item-after">分钟</div>
+                </div>
+              </div>
+            </li>
+          </ul>
+        </div>
+        <div class="padding-1"><a id="create" href="#"
+            class="button button-big button-fill button-success button-round">创建比赛</a>
+        </div>
+      </div>
+    </div>
+  </div>
+
+  <script type='text/javascript' src='//g.alicdn.com/sj/lib/zepto/zepto.min.js' charset='utf-8'></script>
+  <script type='text/javascript' src='//g.alicdn.com/msui/sm/0.6.2/js/sm.min.js' charset='utf-8'></script>
+  <script type='text/javascript' src='//g.alicdn.com/msui/sm/0.6.2/js/sm-extend.min.js' charset='utf-8'></script>
+
+</body>
+<script src="./static/js/config.js"></script>
+<script src="./static/js/setting.js"></script>
+
+</html>

@@ -1,0 +1,28 @@
+{
+  "extends": "eslint-config-egg",
+  "rules": {
+    // 这里填入你的项目需要的个性化配置，比如：
+    //
+    // 结尾分号
+    "semi":[2, "never"],
+    // 缩进
+    "indent": [
+      2,
+      2,
+      {
+        // 强制 switch 语句中的 case 子句的缩进级别
+        "SwitchCase": 1,
+        // 要求三元表达式内的三元表达式不能有缩进
+        "flatTernaryExpressions": true,
+        // 对于 JSX 属性对其不进行约束，在下面的 react/jsx-indent-props 进行约束
+        "ignoredNodes": ["JSXAttribute", "JSXSpreadAttribute"]
+      }
+    ],
+    // 一行长度不应该超过120个字符
+    "max-len": [2, {
+      "code": 120,
+      "ignoreStrings": true,
+      "ignoreTemplateLiterals": true
+    }]
+  }
+}

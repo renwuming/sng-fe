@@ -1,0 +1,24 @@
+.content {
+  padding-bottom: 1.5rem;
+}
+
+
+.show-list {
+  background-color: #e7e7e7!important;
+}
+
+.padding-1 {
+  margin: 0 1rem;
+}
+
+.table-list .item-title {
+  flex-basis: 1.8rem;
+}
+
+.table-list .item-after {
+  flex-basis: 2.2rem;
+}
+
+.long-list {
+}
+

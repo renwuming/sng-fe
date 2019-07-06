@@ -1,0 +1,117 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+  <meta charset="utf-8">
+  <meta http-equiv="X-UA-Compatible" content="IE=edge">
+  <title>德州扑克计时器</title>
+  <meta name="viewport" content="initial-scale=1, maximum-scale=1">
+  <link rel="shortcut icon" href="./static/favicon.ico">
+  <meta name="apple-mobile-web-app-capable" content="yes">
+  <meta name="apple-mobile-web-app-status-bar-style" content="black">
+
+  <link rel="stylesheet" href="//g.alicdn.com/msui/sm/0.6.2/css/sm.min.css">
+  <link rel="stylesheet" href="//g.alicdn.com/msui/sm/0.6.2/css/sm-extend.min.css">
+  <link rel="stylesheet" href="./static/css/timer.css">
+
+</head>
+
+<body class="main-bk">
+  <div class="page-group">
+    <div class="page page-current main-bk">
+      <div class="content">
+        <div class="section">
+          <span id="infoBtn" class="info-btn">
+            <svg t="1562228875283" class="icon" viewBox="0 0 1024 1024" version="1.1" xmlns="http://www.w3.org/2000/svg"
+              p-id="2972" width="30" height="30">
+              <path
+                d="M512 895.981325c212.066907 0 383.981325-171.914418 383.981325-383.981325S724.066907 128.018675 512 128.018675 128.018675 299.93207 128.018675 512s171.914418 383.981325 383.981325 383.981325z m0 63.996546c-247.411903 0-447.978894-200.566992-447.978894-447.978894S264.588097 64.021106 512 64.021106 959.977871 264.588097 959.977871 512 759.411903 959.977871 512 959.977871z m0-223.988424c-26.508747 0-47.998177-21.48943-47.998177-47.998177s21.48943-47.997154 47.998177-47.997154 47.998177 21.48943 47.998177 47.997154c-0.001023 26.508747-21.48943 47.998177-47.998177 47.998177z m-15.649422-415.980109h31.298844c17.672498 0 31.998785 14.326287 31.998785 31.998784 0 0.606821-0.017396 1.213641-0.052189 1.820462l-12.760628 223.989447c-0.964978 16.937764-14.981203 30.178323-31.946597 30.178323h-5.802146c-16.966417 0-30.983665-13.242606-31.946596-30.182416l-12.736069-223.989447c-1.003863-17.643845 12.486382-32.760125 30.130228-33.763988 0.604774-0.033769 1.210571-0.051165 1.816368-0.051165z"
+                p-id="2973" fill="#707070"></path>
+            </svg>
+          </span>
+        </div>
+        <div id="timer" class="timer-box">
+          <var id="hour">-</var><em>:</em>
+          <var id="minute">-</var><em>:</em>
+          <var id="second">-</var>
+        </div>
+        <div class="section text-bk current-level">
+          <h3><var id='curSB'>-</var><em>/</em><var id='curBB'>-</var><span id='curAnteWrapper'><em>/</em><var
+                id='curAnte'>-</var></span></h3>
+        </div>
+        <div class="section next-level">
+          <h3>下一级别盲注： <var id='nextSB'></var><em>/</em><var id='nextBB'></var><span id='nextAnteWrapper'><em>/</em><var
+                id='nextAnte'></var></span></h3>
+        </div>
+        <div class="start-btn">
+          <a id="startBtn" href="#" class="button button-success button-big button-round"
+            style="visibility:hidden;">开始</a>
+        </div>
+      </div>
+
+    </div>
+    <!-- 比赛详情 -->
+    <div id="infoPopup" class="popup popup-about">
+      <div class="content-block">
+        <div class="list-block">
+          <ul class="show-list">
+            <li>
+              <div class="item-content">
+                <div class="item-media"><i class="icon icon-form-name"></i></div>
+                <div class="item-inner">
+                  <div class="item-title">比赛名称</div>
+                  <div id="name" class="item-after"></div>
+                </div>
+              </div>
+            </li>
+            <li>
+              <div class="item-content">
+                <div class="item-media"><i class="icon icon-form-name"></i></div>
+                <div class="item-inner">
+                  <div class="item-title">升盲时间</div>
+                  <div id="blindTime" class="item-after"></div>
+                </div>
+              </div>
+            </li>
+            <li>
+              <div class="item-content">
+                <div class="item-media"><i class="icon icon-form-name"></i></div>
+                <div class="item-inner">
+                  <div class="item-title">比赛总时长</div>
+                  <div id="sumTime" class="item-after"></div>
+                </div>
+              </div>
+            </li>
+          </ul>
+        </div>
+        <div class="list-block">
+          <ul id="blindList" class="show-list table-list">
+            <li>
+              <div class="item-content">
+                <div class="item-media"><i class="icon icon-form-name"></i></div>
+                <div class="item-inner">
+                  <div class="item-title">级别</div>
+                  <div class="item-after">小盲</div>
+                  <div class="item-after">大盲</div>
+                  <div class="item-after">ante</div>
+                </div>
+              </div>
+            </li>
+          </ul>
+        </div>
+      </div>
+    </div>
+
+    <audio id="music" controls preload="auto">
+      <source src="https://d-ring.i4.cn/audio/2014/05/15/22/fe07b93b86170ffa23127df1613eeb2b.mp3" type="audio/mpeg">
+    </audio>
+
+    <script type='text/javascript' src='//g.alicdn.com/sj/lib/zepto/zepto.min.js' charset='utf-8'></script>
+    <script type='text/javascript' src='//g.alicdn.com/msui/sm/0.6.2/js/sm.min.js' charset='utf-8'></script>
+    <script type='text/javascript' src='//g.alicdn.com/msui/sm/0.6.2/js/sm-extend.min.js' charset='utf-8'></script>
+
+</body>
+<script src="./static/js/config.js"></script>
+<script src="./static/js/timer.js"></script>
+
+</html>

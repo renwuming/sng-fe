@@ -1,0 +1,126 @@
+.main-bk {
+    background-color: #0d0d0d!important;
+}
+
+.text-bk {
+    background-color: #181818;
+}
+
+.text-bk::after {
+    background-color: #181818;
+}
+
+.title {
+    color: #fff;
+}
+
+.danger * {
+  color: red!important;
+}
+
+.content {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: space-between;
+    color: #fff;
+    padding-bottom: 2rem;
+    font-family: "PingFang SC", "Helvetica Neue", "Hiragino Sans GB", "Microsoft YaHei", "微软雅黑", Helvetica, Arial, Verdana, sans-serif;
+}
+
+.content .section {
+    width: 100%;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    margin-bottom: .5rem;
+}
+
+.section h3,
+.section h4 {
+    margin: .5rem;
+}
+
+.content .next-level {
+  display: none;
+}
+.next-level * {
+    color: #999;
+    font-weight: 200;
+}
+.current-level {
+    padding: 1rem 0;
+}
+.current-level var, .current-level em {
+    font-size: 2rem;
+    font-weight: 200;
+}
+#blindList .current {
+  background-color: #cc8d40;
+  color: #fff;
+}
+#blindList .current .item-after {
+  color: #fff;
+}
+
+.timer-box {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    height: 12rem;
+}
+
+.timer-box var {
+    font-size: 4rem;
+    color: #fff;
+    font-weight: 200;
+}
+
+.timer-box em {
+    font-size: 3rem;
+    color: #fff;
+}
+
+.start-btn {
+    width: 60%;
+}
+
+.info-btn {
+    position: absolute;
+    top: 1rem;
+    right: 1rem;
+    font-size: 1rem;
+}
+
+.show-list {
+  background-color: #e7e7e7!important;
+}
+
+.table-list .item-title {
+  flex-basis: 1.8rem;
+}
+.table-list .item-after {
+  flex-basis: 2.4rem;
+}
+
+#infoPopup .content-block {
+  padding: 0;
+}
+
+#music {
+  display: none;
+}
+
+
+var,
+em {
+    font-style: normal;
+}
+
+var {
+    font-family: "Helvetica Neue";
+}
+
+em {
+    margin: 0 .4rem;
+}
