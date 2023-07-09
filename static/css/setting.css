@@ -2,13 +2,16 @@
   padding-bottom: 1.5rem;
 }
 
-
 .show-list {
-  background-color: #e7e7e7!important;
+  background-color: #e7e7e7 !important;
 }
 
 .padding-1 {
   margin: 0 1rem;
+}
+
+.m-t {
+  margin-top: 1rem;
 }
 
 .table-list .item-title {
@@ -18,7 +21,3 @@
 .table-list .item-after {
   flex-basis: 2.2rem;
 }
-
-.long-list {
-}
-
