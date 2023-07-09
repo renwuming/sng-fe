@@ -121,7 +121,7 @@ $("#create").on("click", function () {
 
 $("#temp1").on("click", function () {
   $name.val(`德州俱乐部-${new Date().toLocaleDateString()}`);
-  $timePicker.val(30);
+  $timePicker.val(15);
 
   levelList = [
     {
@@ -173,6 +173,88 @@ $("#temp1").on("click", function () {
       sb: 40000,
       bb: 80000,
       ante: 0,
+    },
+  ];
+
+  handleLevelList();
+  $sb.val("");
+  $ante.val("");
+});
+
+$("#temp2").on("click", function () {
+  $name.val(`德州俱乐部-${new Date().toLocaleDateString()}`);
+  $timePicker.val(20);
+
+  levelList = [
+    {
+      sb: 100,
+      bb: 200,
+      ante: 0,
+    },
+    {
+      sb: 200,
+      bb: 400,
+      ante: 0,
+    },
+    {
+      sb: 300,
+      bb: 600,
+      ante: 0,
+    },
+    {
+      sb: 500,
+      bb: 1000,
+      ante: 0,
+    },
+    {
+      sb: 800,
+      bb: 1500,
+      ante: 0,
+    },
+    {
+      sb: 1000,
+      bb: 2000,
+      ante: 0,
+    },
+    {
+      sb: 2000,
+      bb: 4000,
+      ante: 4000,
+    },
+    {
+      sb: 3000,
+      bb: 6000,
+      ante: 6000,
+    },
+    {
+      sb: 5000,
+      bb: 10000,
+      ante: 10000,
+    },
+    {
+      sb: 8000,
+      bb: 15000,
+      ante: 15000,
+    },
+    {
+      sb: 10000,
+      bb: 20000,
+      ante: 20000,
+    },
+    {
+      sb: 20000,
+      bb: 40000,
+      ante: 40000,
+    },
+    {
+      sb: 30000,
+      bb: 60000,
+      ante: 60000,
+    },
+    {
+      sb: 40000,
+      bb: 80000,
+      ante: 80000,
     },
   ];
 
